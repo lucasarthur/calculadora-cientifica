@@ -19,12 +19,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         var MR = 0.0
-        var temp1 = 0.0
-        var temp2 = 0.0
+        var resultado = 0.0
         var operacao = 0
-        var result = 0.0
+        var primeiroNumero = true
         var IsResult = false
+        var historico = ""
         val display = findViewById<TextView>(R.id.display)
+        val displayHist = findViewById<TextView>(R.id.displayHist)
         val btn1 = findViewById<Button>(R.id.btn1)
         val btn2 = findViewById<Button>(R.id.btn2)
         val btn3 = findViewById<Button>(R.id.btn3)
@@ -46,164 +47,117 @@ class MainActivity : AppCompatActivity() {
         val btnMMenos = findViewById<Button>(R.id.btnMMenos)
         val btnCE = findViewById<Button>(R.id.btnCE)
 
-        btn0.setOnClickListener {
-            if(IsResult)
-                display.setText("0")
-            if(!display.text.toString().equals("0"))
-                display.setText(display.text.toString().plus("0"))
-            IsResult = false
-
+        fun atualizarDisplay(valor: String) {
+            if (IsResult || display.text.toString() == "0") {
+                display.text = valor
+                IsResult = false
+            } else {
+                display.text = display.text.toString().plus(valor)
+            }
         }
 
-        btn1.setOnClickListener {
-
-            if(display.text.toString().equals("0") || IsResult)
-                display.setText("1")
-            else
-                display.setText(display.text.toString().plus("1"))
-            IsResult = false
-
-        }
-
-        btn2.setOnClickListener {
-            if(display.text.toString().equals("0") || IsResult)
-                display.setText("2")
-            else
-                display.setText(display.text.toString().plus("2"))
-            IsResult = false
-
-        }
-
-        btn3.setOnClickListener {
-            if(display.text.toString().equals("0") || IsResult)
-                display.setText("3")
-            else
-                display.setText(display.text.toString().plus("3"))
-            IsResult = false
-
-        }
-
-        btn4.setOnClickListener {
-            if(display.text.toString().equals("0") || IsResult)
-                display.setText("4")
-            else
-                display.setText(display.text.toString().plus("4"))
-            IsResult = false
-
-        }
-
-        btn5.setOnClickListener {
-            if(display.text.toString().equals("0") || IsResult)
-                display.setText("5")
-            else
-                display.setText(display.text.toString().plus("5"))
-            IsResult = false
-
-        }
-
-        btn6.setOnClickListener {
-            if(display.text.toString().equals("0") || IsResult)
-                display.setText("6")
-            else
-                display.setText(display.text.toString().plus("6"))
-            IsResult = false
-
-        }
-
-        btn7.setOnClickListener {
-            if(display.text.toString().equals("0") || IsResult)
-                display.setText("7")
-            else
-                display.setText(display.text.toString().plus("7"))
-            IsResult = false
-
-        }
-
-        btn8.setOnClickListener {
-            if(display.text.toString().equals("0") || IsResult)
-                display.setText("8")
-            else
-                display.setText(display.text.toString().plus("8"))
-            IsResult = false
-
-        }
-
-        btn9.setOnClickListener {
-            if(display.text.toString().equals("0") || IsResult)
-                display.setText("9")
-            else
-                display.setText(display.text.toString().plus("9"))
-            IsResult = false
-
-        }
-
+        btn0.setOnClickListener { atualizarDisplay("0") }
+        btn1.setOnClickListener { atualizarDisplay("1") }
+        btn2.setOnClickListener { atualizarDisplay("2") }
+        btn3.setOnClickListener { atualizarDisplay("3") }
+        btn4.setOnClickListener { atualizarDisplay("4") }
+        btn5.setOnClickListener { atualizarDisplay("5") }
+        btn6.setOnClickListener { atualizarDisplay("6") }
+        btn7.setOnClickListener { atualizarDisplay("7") }
+        btn8.setOnClickListener { atualizarDisplay("8") }
+        btn9.setOnClickListener { atualizarDisplay("9") }
 
         btnCE.setOnClickListener {
-            display.setText("0")
+            display.text = "0"
+            displayHist.text = ""
+            resultado = 0.0
+            operacao = 0
+            primeiroNumero = true
+            IsResult = false
+            historico = ""
         }
 
         btnPonto.setOnClickListener {
-            if(!display.text.toString().contains("."))
-                display.setText(display.text.toString().plus("."))
-
+            if (!display.text.toString().contains(".")) {
+                display.text = display.text.toString().plus(".")
+            }
         }
 
-
         btnMRC.setOnClickListener {
-            display.setText(MR.toString())
-
+            display.text = MR.toString()
+            IsResult = true
         }
 
         btnMMAIS.setOnClickListener {
             MR += display.text.toString().toDouble()
-            display.setText("0")
-                IsResult = true
-
+            IsResult = true
         }
 
         btnMMenos.setOnClickListener {
             MR -= display.text.toString().toDouble()
-            display.setText("0")
-                IsResult = true
-
+            IsResult = true
         }
 
-        btnMais.setOnClickListener {
-            temp1 = display.text.toString().toDouble()
-            operacao = 1
-            display.setText("0")
-
+        fun executarOperacao(novoNumero: Double): Double {
+            return when (operacao) {
+                1 -> resultado + novoNumero
+                2 -> resultado - novoNumero
+                3 -> resultado * novoNumero
+                4 -> if (novoNumero != 0.0) resultado / novoNumero else {
+                    0.0
+                }
+                else -> novoNumero
+            }
         }
 
-        btnMenos.setOnClickListener {
-            temp1 = display.text.toString().toDouble()
-            operacao = 2
-            display.setText("0")
-
+        fun lidarComOperador(novaOperacao: Int) {
+            val numeroAtual = display.text.toString().toDoubleOrNull() ?: 0.0
+            if (IsResult) {
+                historico = numeroAtual.toString()
+                primeiroNumero = false
+                IsResult = false
+            } else if (!primeiroNumero) {
+                resultado = executarOperacao(numeroAtual)
+                historico += when (operacao) {
+                    1 -> " + "
+                    2 -> " - "
+                    3 -> " * "
+                    4 -> " / "
+                    else -> ""
+                } + numeroAtual.toString()
+                displayHist.text = historico
+            } else {
+                resultado = numeroAtual
+                primeiroNumero = false
+                historico += numeroAtual.toString()
+                displayHist.text = historico
+            }
+            operacao = novaOperacao
+            IsResult = true
+            display.text = "0"
         }
-        btnMultiplicar.setOnClickListener {
-            temp1 = display.text.toString().toDouble()
-            operacao = 3
-            display.setText("0")
 
-        }
-
-        btnDividir.setOnClickListener {
-            temp1 = display.text.toString().toDouble()
-            operacao = 4
-            display.setText("0")
-
-        }
+        btnMais.setOnClickListener { lidarComOperador(1) }
+        btnMenos.setOnClickListener { lidarComOperador(2) }
+        btnMultiplicar.setOnClickListener { lidarComOperador(3) }
+        btnDividir.setOnClickListener { lidarComOperador(4) }
 
         btnIgual.setOnClickListener {
-            temp2 = display.text.toString().toDouble()
-            when(operacao) {
-                1 -> result = temp1 + temp2
-                2 -> result = temp1 - temp2
-                3 -> result = temp1 * temp2
-                4 -> result = temp1 / temp2
-            }
-            display.setText(result.toString())
+            val numeroAtual = display.text.toString().toDoubleOrNull() ?: 0.0
+            resultado = executarOperacao(numeroAtual)
+            historico += when (operacao) {
+                1 -> " + "
+                2 -> " - "
+                3 -> " * "
+                4 -> " / "
+                else -> ""
+            } + numeroAtual.toString()
+            displayHist.text = historico
+            display.text = resultado.toString()
+            operacao = 0
+            primeiroNumero = true
+            IsResult = true
+            historico = resultado.toString()
         }
     }
 }
