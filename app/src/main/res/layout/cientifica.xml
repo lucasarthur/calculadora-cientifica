@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Cientifica"
+    android:background="@color/preto">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/displayHist_cientifica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:text=""
+            android:textSize="36sp"
+            android:textColor="@color/branco" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="bottom">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <TextView
+                android:id="@+id/display_cientifica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                android:text="0"
+                android:textColor="@color/branco"
+                android:textSize="36sp" />
+        </HorizontalScrollView>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_sin"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="sin"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_m_cos"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="cos"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_tan"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="tan"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_m_hyp"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="hyp"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_m_sec"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="sec"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_csc"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="csc"
+            android:textSize="20dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btn_mc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="MC"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_mr"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="MR"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_m_plus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="M+"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_m_minus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="M-"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_ms"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="MS"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_m_dv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="Mv"
+            android:textSize="20dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_2nd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="2ⁿᵈ"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_e"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="e"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btnCE_cientifica"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="CE"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn_apagar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="C"
+            android:textSize="23dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_x2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="x²"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_pi"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="π"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn_exp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="exp"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_mod"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="mod"
+            android:textSize="20dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_raiz"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="√x"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_n_factorial"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="n!"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn7_cientifica"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="7"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn8_cientifica"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="8"
+            android:textSize="23dp" />
+        <Button
+            android:id="@+id/btn9_cientifica"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="9"
+            android:textSize="23dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_10x"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="10ˣ"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_ln"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="ln"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn4_cientifica"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="4"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn5_cientifica"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="5"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn6_cientifica"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:text="6"
+            android:textSize="23dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_log"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="log"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_abs"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="|x|"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn1_cientifica"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="1"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn2_cientifica"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="2"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn3_cientifica"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="3"
+            android:textSize="23dp" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_xy"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="xʸ"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_parenteses_abre"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="("
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn_parenteses_fecha"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text=")"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn0_cientifica"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="0"
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn_1x"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="¹/x"
+            android:textSize="20dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_igual_cientifica"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="2"
+            android:text="="
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn_decimal_cientifica"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="."
+            android:textSize="23dp" />
+
+        <Button
+            android:id="@+id/btn_mais_menos"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="+/-"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_div_cientifica"
+            style="@style/BotaoQuadradoVermelhoTextoBrancoFino"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:text="÷"
+            android:textSize="23dp" />
+    </TableRow>
+</LinearLayout>

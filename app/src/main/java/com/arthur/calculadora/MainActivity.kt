@@ -1,5 +1,6 @@
 package com.arthur.calculadora
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -46,6 +47,13 @@ class MainActivity : AppCompatActivity() {
         val btnMMAIS = findViewById<Button>(R.id.btnMMais)
         val btnMMenos = findViewById<Button>(R.id.btnMMenos)
         val btnCE = findViewById<Button>(R.id.btnCE)
+        val btnCientifica = findViewById<Button>(R.id.btnCientifica)
+
+
+        btnCientifica.setOnClickListener {
+            val intent = Intent(this, Cientifica::class.java)
+            startActivity(intent)
+        }
 
         fun atualizarDisplay(valor: String) {
             if (IsResult || display.text.toString() == "0") {
